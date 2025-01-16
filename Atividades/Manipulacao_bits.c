@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-void print_binario(unsigned char num) {
+void printbinario(unsigned char num) {
     for (int i = 7; i >= 0; i--) {
         printf("%d", (num >> i) & 1);
     }
@@ -12,9 +12,9 @@ int main() {
     unsigned char num2 = 0b11010101;  
 
     printf("Número Binário 1: ");
-    print_binario(num1);
+    printbinario(num1);
     printf("Número Binário 2: ");
-    print_binario(num2);
+    printbinario(num2);
 
     unsigned char comparison = 0;
     for (int i = 0; i < 8; i++) {
@@ -23,22 +23,22 @@ int main() {
         comparison |= ((bit1 == bit2) << i);
     }
     printf("\nComparação bit a bit: ");
-    print_binario(comparison);
+    printbinario(comparison);
 
     unsigned char leftShift = num1 << 1;
     printf("Deslocamento à esquerda: ");
-    print_binario(leftShift);
+    printbinario(leftShift);
 
     unsigned char rightShift = num1 >> 1;
     printf("Deslocamento à direita: ");
-    print_binario(rightShift);
+    printbinario(rightShift);
 
     if (num1 & 1) {  
         printf("\nO bit menos significativo é 1.\n");
         unsigned char inverted = ~num1;
         printf("Invertendo todos os bits...\n");
         printf("Número invertido: ");
-        print_binario(inverted);
+        printbinario(inverted);
     } else {
         printf("\nO bit menos significativo está inativo.\n");
     }
